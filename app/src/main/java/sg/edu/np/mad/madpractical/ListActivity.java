@@ -41,13 +41,4 @@ public class ListActivity extends AppCompatActivity {
         userRecyclerView.setLayoutManager(mLayoutManager);
         userRecyclerView.setAdapter(mAdapter);
     }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        User user = users.get(requestCode);
-        assert data != null;
-        user.followed = data.getBooleanExtra("followed", user.followed);
-    }
 }
